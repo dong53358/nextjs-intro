@@ -18,6 +18,7 @@ export default function NavBar() {
           display: flex;
           gap: 10px;
           flex-direction: column;
+          justify-content: center;
           align-items: center;
           padding-top: 20px;
           padding-bottom: 10px;

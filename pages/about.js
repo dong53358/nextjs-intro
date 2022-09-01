@@ -3,9 +3,17 @@ import Seo from "../components/Seo";
 
 export default function About() {
   return (
-    <div>
+    <main>
       <Seo title="About" />
       <h1>About</h1>
-    </div>
+      <style jsx>{`
+        main {
+          display: flex;
+          justify-content: center;
+          width: 100vw;
+          height: 100vh;
+        }
+      `}</style>
+    </main>
   );
 }
