@@ -7,8 +7,8 @@ import Seo from "../components/Seo";
 export default function Home({ results }) {
   const router = useRouter();
   const BASE_IMAGE = "image.tmdb.org/t/p/w500/";
-  const onClick = (id, title) => {
-    router.push(`/movies/${title}/$${id}`);
+  const onClick = (title, id) => {
+    router.push(`/movies/${title}/${id}`);
   };
 
   return (
@@ -16,14 +16,14 @@ export default function Home({ results }) {
       <Seo title="Home" />
       {results?.map((movie) => (
         <div
-          onClick={() => onClick(movie.id, movie.original_title)}
+          onClick={() => onClick(movie.title, movie.id)}
           className="movie"
           key={movie.id}
         >
           <img src={`https://${BASE_IMAGE}/${movie.poster_path}`} />
           <h4>
             <Link href={`/movies/${movie.title}/${movie.id}`}>
-              <a>{movie.original_title}</a>
+              <a>{movie.title}</a>
             </Link>
           </h4>
         </div>
